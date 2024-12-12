@@ -1,0 +1,238 @@
+/* Definición de variables globales */
+:root {
+    --primary-color: #007bff; /* Azul vivo */
+    --hover-color: #369eff; /* Azul más oscuro al pasar el mouse */
+    --text-color: #333333; /* Texto en gris oscuro */
+    --background-color: #f5f5f5; /* Fondo más suave */
+    --navbar-background-color: #ffffff; /* Fondo blanco para el navbar */
+    --footer-background-color: #1e1e1e; /* Fondo oscuro para el footer */
+    --footer-text-color: #ffffff; /* Texto blanco para el footer */
+}
+
+/* Reset básico y estilo general */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente moderna y limpia */
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navbar con logos ajustados */
+nav {
+    background-color: var(--navbar-background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-logo {
+    margin: 0 80px;
+}
+nav .nav-logo img {
+    height: 50px;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+nav ul li a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* Secciones */
+section {
+    padding: 30px 20px;
+    text-align: center;
+}
+section h2, section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+section h2 {
+    font-size: 2.5em;
+}
+section h3 {
+    font-size: 1.5em;
+}
+
+/* Carrusel con botones centrados y ajustado al centro */
+.carousel {
+    position: relative;
+    height: 400px;
+    width: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+.carousel img:first-child {
+    opacity: 1;
+}
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 10;
+}
+.carousel button:hover {
+    opacity: 1;
+}
+.carousel .prev {
+    left: 60px;
+}
+.carousel .next {
+    right: 50px;
+}
+
+/* Información */
+.info {
+    margin: 20px auto;
+    padding: 0 40px;
+    text-align: justify;
+    max-width: 800px;
+}
+
+/* Contacto */
+#contacto {
+    background-color: var(--footer-background-color); /* Fondo oscuro, igual que el footer */
+    margin: 30px auto;
+    padding: 10px;
+    width: 20%; /* Ancho reducido para una presentación más estrecha */
+    border: 1px solid #444; /* Borde sutil que combina con el fondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para efecto de elevación */
+    text-align: center; /* Alinea el texto y los elementos al centro */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.whatsapp-icon {
+    color: #fff; /* Icono en color blanco para contraste */
+    font-size: 2.5em; /* Tamaño del icono aumentado */
+    display: block; /* Asegura que el icono esté en su propia línea */
+    margin: 0 auto 10px; /* Espacio antes y después del icono */
+}
+
+.whatsapp-icon:hover {
+    color: var(--primary-color);
+}
+
+#contacto p {
+    color: #fff; /* Texto en blanco para mejor contraste */
+    margin: 5px 0; /* Reducir el margen entre elementos de texto */
+    font-size: 1.2em; /* Aumenta el tamaño del texto para mejor legibilidad */
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* Ajustes para tablets y pantallas grandes de móviles */
+    .carousel {
+        height: 300px; /* Ajuste de altura del carrusel */
+    }
+    .info,
+    #contacto {
+        width: 80%; /* Ajustar el ancho para mejor visualización */
+        padding: 20px; /* Aumentar el padding para un mejor espaciado */
+    }
+    nav .nav-logo img {
+        height: 40px; /* Reducir el tamaño del logo */
+    }
+    .whatsapp-icon {
+        font-size: 2em; /* Ajustar tamaño del icono */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para dispositivos móviles y tablets en posición vertical */
+    nav ul {
+        flex-direction: column; /* Cambio a disposición vertical para los enlaces */
+        padding: 10px; /* Añadir padding para evitar que los enlaces estén muy juntos */
+    }
+    nav ul li {
+        margin: 10px 0; /* Aumentar el margen para separar los enlaces */
+    }
+
+    .carousel {
+        height: 250px; /* Reducir aún más la altura del carrusel */
+        width: 100%; /* Ajustar el ancho al 100% */
+    }
+
+    .info,
+    #contacto {
+        width: 90%; /* Ajustar el ancho para mejor visualización en dispositivos pequeños */
+        padding: 10px; /* Ajustar el padding para mantener la proporción */
+    }
+
+    nav .nav-logo {
+        margin: 0 20px; /* Reducir el margen lateral para los logos */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para teléfonos móviles en posición vertical */
+    section h2, section h3 {
+        font-size: 1.5em; /* Reducir el tamaño de las fuentes para los títulos */
+    }
+
+    .carousel {
+        height: 200px; /* Ajustar la altura del carrusel a pantallas más pequeñas */
+    }
+
+    .info,
+    #contacto {
+        width: 100%; /* Usar todo el ancho disponible */
+        padding: 15px; /* Ajustar el padding para un mejor manejo */
+    }
+
+    nav .nav-logo img {
+        height: 35px; /* Reducir aún más el tamaño del logo */
+    }
+
+    .whatsapp-icon {
+        font-size: 1.8em; /* Ajustar el tamaño del icono de WhatsApp */
+    }
+
+    nav {
+        padding: 5px 0; /* Reducir el padding del navbar */
+    }
+}
